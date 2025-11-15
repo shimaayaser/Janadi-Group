@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ganadi Group </title>
+  <link rel="icon" type="image/png" href="Image/Logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+</head>
+<body class="lang-ar">    
+<nav class="main-nav">
+  <div class="nav-left">
+    <img src="Image/Logo.png" alt="Logo" class="logo" />
+  </div>
+
+  <div class="nav-right">
+    <ul class="nav-list" id="navList">
+      <button class="close-btn" id="closeMenu">×</button>
+      <li ><a href="home.html#about" class="nav-item" data-key="about">About Us</a></li>
+      <li><a href="home.html#why" class="nav-item" data-key="why">why Us</a></li>
+      <li ><a href="home.html#services" class="nav-item" data-key="services">Services</a></li>
+      <li ><a href="home.html#References" class="nav-item" data-key="References"> Our References</a></li>
+      <li ><a href="home.html#contact" class="nav-item" data-key="contact" >Contact</a></li>
+    </ul>
+
+    <div class="language-dropdown">
+      <button id="langButton" class="lang-button">English </button>
+      <ul class="lang-list" id="langList">
+        <li data-lang="en">English</li>
+        <li data-lang="ar">العربية</li>
+        <li data-lang="fr">Français</li>
+      </ul>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+<section class="training-section">
+
+  <p class="training-paragraph" data-key="training_paragraph">
+    Janadi Group organizes training activities tailored to the specific needs of its clients.
+    Our programs cover a wide range of disciplines including entrepreneurship, strategy, organization, management, finance, and more.
+    We offer training workshops adapted to the type and size of the organization: project leaders, VSEs, SMEs, GEs, and institutions.
+    Our firm provides two types of programs:
+  </p>
+  <div class="training-wrapper">
+    <div class="training-box slide-left">
+      <h2 class="training-title" data-key="training_title1">Pre-Established Programs</h2>
+      <hr class="training-divider" />
+      <p class="training-description" data-key="training_description1">
+        Public training courses designed in advance with specific dates and locations.
+      </p>
+    </div>
+    <div class="training-box slide-right">
+      <h2 class="training-title"data-key="training_title2">Contract Programs</h2>
+      <hr class="training-divider" />
+      <p class="training-description"data-key="training_description2">
+        Customized to meet the client’s needs while considering their specific requirements and expectations.
+      </p>
+    </div>
+  </div>
+</section>
+<script src="script.js"></script>
+</body>
+</html>

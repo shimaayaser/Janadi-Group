@@ -1,0 +1,135 @@
+// Toggle mobile menu
+function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  nav.classList.toggle("show");
+}
+
+// Toggle language dropdown
+function toggleDropdown() {
+  const menu = document.getElementById("languageMenu");
+  menu.classList.toggle("show");
+}
+
+// Set language and direction
+function setLanguage(lang) {
+  const html = document.documentElement;
+
+  if (lang === 'ar') {
+    html.setAttribute('dir', 'rtl');
+    html.setAttribute('lang', 'ar');
+    document.body.style.textAlign = "right";
+  } else {
+    html.setAttribute('dir', 'ltr');
+    html.setAttribute('lang', lang);
+    document.body.style.textAlign = "left";
+  }
+
+  // Save language selection
+  localStorage.setItem('selectedLang', lang);
+
+  // Hide language menu
+  document.getElementById("languageMenu").classList.remove("show");
+}
+
+// Close language dropdown when clicking outside
+window.addEventListener("click", function(e) {
+  const toggle = document.querySelector('.language-toggle');
+  const menu = document.getElementById('languageMenu');
+
+  if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+    menu.classList.remove('show');
+  }
+});
+
+// Load saved language on page load
+window.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem('selectedLang');
+  if (savedLang) {
+    setLanguage(savedLang);
+  }
+
+  // Hide menu just in case
+  const menu = document.getElementById("languageMenu");
+  if (menu) {
+    menu.classList.remove("show");
+  }
+});
+
+// Slider code
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === index);
+    dots[i].classList.toggle("active", i === index);
+  });
+  currentSlide = index;
+}
+
+function nextSlide() {
+  const next = (currentSlide + 1) % slides.length;
+  showSlide(next);
+}
+
+// تغيير تلقائي كل 5 ثواني
+setInterval(nextSlide, 5000);
+
+// عند الضغط على النقاط
+function goToSlide(index) {
+  showSlide(index);
+}
+
+// بقية كود اللغة والقائمة التي اشتغلنا عليها من قبل...
+function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  nav.classList.toggle("show");
+}
+
+function toggleDropdown() {
+  const menu = document.getElementById("languageMenu");
+  menu.classList.toggle("show");
+}
+
+function setLanguage(lang) {
+  const html = document.documentElement;
+
+  if (lang === "ar") {
+    html.setAttribute("dir", "rtl");
+    html.setAttribute("lang", "ar");
+    document.body.style.textAlign = "right";
+  } else {
+    html.setAttribute("dir", "ltr");
+    html.setAttribute("lang", lang);
+    document.body.style.textAlign = "left";
+  }
+
+  localStorage.setItem("selectedLang", lang);
+
+  fetch(`lang-${lang}.json`)
+    .then((res) => res.json())
+    .then((data) => {
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (data[key]) {
+          el.textContent = data[key];
+        }
+      });
+    });
+
+  document.getElementById("languageMenu").classList.remove("show");
+}
+
+window.addEventListener("click", function (e) {
+  const toggle = document.querySelector(".language-toggle");
+  const menu = document.getElementById("languageMenu");
+  if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+    menu.classList.remove("show");
+  }
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("selectedLang") || "en";
+  setLanguage(savedLang);
+});
