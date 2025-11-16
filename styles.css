@@ -694,7 +694,7 @@ body {
 .entrepreneurial-section {
   background-color: var(--white);
   padding: 100px 10%;
-  /*font-family: "Poppins", sans-serif;*/
+
   color: var(--dark-blue);
 }
 .entrepreneurial-container {
@@ -754,7 +754,7 @@ body {
 .training-section {
   padding: 80px 10%;
   background-color: var(--white);
-  font-family: "Poppins", sans-serif;
+ 
   color: var(--dark-blue);
 }
 .training-paragraph{
@@ -805,7 +805,7 @@ body {
 .training-description{
   font-size: 20px;
   line-height: 1.6;
-  color: var(--dark-blue);
+  color:#000;
 }
 .slide-left.show {
   opacity: 1;
@@ -1554,7 +1554,7 @@ html[dir="rtl"] .entrepreneurial-list li {
     font-size:  16px;/*1rem*/
     margin-bottom: 14px;
   }
-  /*التدريب*/ 
+  
   .training-paragraph { font-size:  18px;/*1.1rem*/ }
   .training-box { max-width: 400px; min-height: 300px; }
   .training-title { font-size: 24px; }
@@ -1707,7 +1707,7 @@ html[dir="rtl"] .entrepreneurial-list li {
     font-size: 16px;/*1rem*/
     margin-bottom: 15px;
   }
-  /*التدريب9*/
+  
   .training-paragraph { font-size: 18px;/*1.1rem*/ }
   .training-box { max-width: 400px; min-height: 300px; }
   .training-title { font-size: 24px; }
